@@ -12,5 +12,5 @@ I like the tasks to be sorted by default by _due date_ so that most important ta
 
 # Todo
 
-- Tasks without a due date appear on top
+- let tasks without a due date appear on bottom in the project tasks list as well
 - maybe add some configuration stuff later?
