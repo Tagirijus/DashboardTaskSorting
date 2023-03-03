@@ -48,16 +48,16 @@ class TagiDashboardPaginationTaskSorting extends Base
                     // to be honest: ChatGPT magic here, which I somehow changed, till it worked ... :D
                     // I only understand a part of it: I look for due-dates, which are 0 and give them
                     // 1, otherwise 0 (this part isn't logical to me, but it works ... magically); then
-                    // I add another sorting by the due-date and sort everyhing ASCending
+                    // I add another sorting by the due-date
                     $query->orderBy(
-                        'CASE WHEN ' . TaskModel::TABLE . '.date_due is 0 THEN 1 ELSE 0 END, ' . TaskModel::TABLE . '.date_due',
+                        'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 1 ELSE 0 END, ' . TaskModel::TABLE . '.date_due',
                         $ascOrDesc
                     );
                 } else {
                     // here I just invert the "1 ELSE 0" to "0 ELSE 1" - again magic,
                     // or I just cannot follow the logic right now - woopsie
                     $query->orderBy(
-                        'CASE WHEN ' . TaskModel::TABLE . '.date_due is 0 THEN 0 ELSE 1 END, ' . TaskModel::TABLE . '.date_due',
+                        'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 0 ELSE 1 END, ' . TaskModel::TABLE . '.date_due',
                         $ascOrDesc
                     );
                 }

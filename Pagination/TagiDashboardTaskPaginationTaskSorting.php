@@ -46,14 +46,14 @@ class TagiDashboardTaskPaginationTaskSorting extends Base
                 // 1, otherwise 0 (this part isn't logical to me, but it works ... magically); then
                 // I add another sorting by the due-date and sort everyhing ASCending
                 $query->orderBy(
-                    'CASE WHEN ' . TaskModel::TABLE . '.date_due is 0 THEN 1 ELSE 0 END, ' . TaskModel::TABLE . '.date_due',
+                    'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 1 ELSE 0 END, ' . TaskModel::TABLE . '.date_due',
                     $ascOrDesc
                 );
             } else {
                 // here I just invert the "1 ELSE 0" to "0 ELSE 1" - again magic,
                 // or I just cannot follow the logic right now - woopsie
                 $query->orderBy(
-                    'CASE WHEN ' . TaskModel::TABLE . '.date_due is 0 THEN 0 ELSE 1 END, ' . TaskModel::TABLE . '.date_due',
+                    'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 0 ELSE 1 END, ' . TaskModel::TABLE . '.date_due',
                     $ascOrDesc
                 );
             }
