@@ -1,7 +1,7 @@
 <?php
 
 // namespace Kanboard\Pagination;
-namespace Kanboard\Plugin\TagiDashboardTaskSorting\Controller;
+namespace Kanboard\Plugin\TagiDashboardTaskSorting\Pagination;
 
 use Kanboard\Core\Base;
 use Kanboard\Model\ProjectModel;

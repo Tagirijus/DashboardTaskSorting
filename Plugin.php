@@ -3,7 +3,7 @@
 namespace Kanboard\Plugin\TagiDashboardTaskSorting;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Plugin\TagiDashboardTaskSorting\Controller;
+use Kanboard\Plugin\TagiDashboardTaskSorting\Pagination;
 
 
 class Plugin extends Base
@@ -11,7 +11,7 @@ class Plugin extends Base
     public function initialize()
     {
         $this->container['dashboardPagination'] = $this->container->factory(function ($container) {
-            return new Controller\TagiDashboardPaginationTaskSorting($container);
+            return new Pagination\TagiDashboardPaginationTaskSorting($container);
         });
     }
 
