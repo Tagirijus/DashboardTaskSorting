@@ -13,6 +13,9 @@ class Plugin extends Base
         $this->container['dashboardPagination'] = $this->container->factory(function ($container) {
             return new Pagination\TagiDashboardPaginationTaskSorting($container);
         });
+        $this->container['taskPagination'] = $this->container->factory(function ($container) {
+            return new Pagination\TagiDashboardTaskPaginationTaskSorting($container);
+        });
     }
 
     public function getPluginName()
