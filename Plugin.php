@@ -40,7 +40,7 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return 'https://www.tagirijus.de';
+        return 'https://github.com/tagirijus/kanboard-TagiDashboardTasksSorting';
     }
 
     public function getCompatibleVersion()
