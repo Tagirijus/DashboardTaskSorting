@@ -11,10 +11,10 @@ class Plugin extends Base
     public function initialize()
     {
         $this->container['dashboardPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiDashboardPaginationTaskSorting($container);
+            return new Pagination\TagiDashboardTaskSortingPagination($container);
         });
         $this->container['taskPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiDashboardTaskPaginationTaskSorting($container);
+            return new Pagination\TagiDashboardTaskSortingTaskPagination($container);
         });
     }
 
@@ -25,7 +25,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Tagi Dashboard Task Sorting changes the default sorting for tasks on the main dashboard to due date ASC. For the overview and the tasks site.');
+        return t('Tagi Dashboard Task Sorting changes the default sorting for tasks on the main dashboard to 1. due date ASC and 2. priority DESC: for both, the overview and the tasks site.');
     }
 
     public function getPluginAuthor()
@@ -35,7 +35,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.2';
+        return '1.1.0';
     }
 
     public function getPluginHomepage()

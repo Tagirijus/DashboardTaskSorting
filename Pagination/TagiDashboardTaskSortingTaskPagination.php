@@ -13,7 +13,7 @@ use Kanboard\Model\TaskModel;
  * @package Kanboard\Pagination
  * @author  Frederic Guillot
  */
-class TagiDashboardTaskPaginationTaskSorting extends Base
+class TagiDashboardTaskSortingTaskPagination extends Base
 {
     /**
      * Get dashboard pagination
@@ -45,19 +45,20 @@ class TagiDashboardTaskPaginationTaskSorting extends Base
                 // I only understand a part of it: I look for due-dates, which are 0 and give them
                 // 1, otherwise 0 (this part isn't logical to me, but it works ... magically); then
                 // I add another sorting by the due-date and sort everyhing ASCending
-                $query->orderBy(
-                    'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 1 ELSE 0 END, ' . TaskModel::TABLE . '.date_due',
-                    $ascOrDesc
+                $orderTmp = (
+                        'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 1 ELSE 0 END, ' .
+                        TaskModel::TABLE . '.date_due'
                 );
             } else {
                 // here I just invert the "1 ELSE 0" to "0 ELSE 1" - again magic,
                 // or I just cannot follow the logic right now - woopsie
-                $query->orderBy(
-                    'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 0 ELSE 1 END, ' . TaskModel::TABLE . '.date_due',
-                    $ascOrDesc
+                $orderTmp = (
+                        'CASE WHEN ' . TaskModel::TABLE . '.date_due = 0 THEN 0 ELSE 1 END, ' .
+                        TaskModel::TABLE . '.date_due'
                 );
             }
-
+            $query->orderBy($orderTmp, $ascOrDesc);
+            $query->orderBy(TaskModel::TABLE . '.priority', 'DESC');
         }
 
         return $this->paginator
