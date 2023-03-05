@@ -63,6 +63,7 @@ class TagiDashboardTaskSortingPagination extends Base
             }
             $query->orderBy($orderTmp, $ascOrDesc);
             $query->orderBy(TaskModel::TABLE . '.priority', 'DESC');
+            $query->orderBy(TaskModel::TABLE . '.position', 'ASC');
         }
 
             $paginator = $this->paginator
