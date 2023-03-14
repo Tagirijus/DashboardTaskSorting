@@ -2,7 +2,7 @@
 
 #### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
-This plugin changes the sorting of the _tasks_ on the _dashboard_ overview and tasks site.
+This plugin changes the **default** sorting of the _tasks_ on the _dashboard_ overview and _my tasks_ site.
 
 
 Screenshots
