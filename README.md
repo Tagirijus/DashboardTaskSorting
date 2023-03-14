@@ -5,6 +5,14 @@
 This plugin changes the sorting of the _tasks_ on the _dashboard_ overview and tasks site.
 
 
+Screenshots
+-------------
+
+**Sort example dashboard**
+
+![TagiDashboardTaskSorting sort example dashboard](../master/Screenshots/TagiDashboardTaskSorting_sort_example.png)
+
+
 Compatibility
 -------------
 
