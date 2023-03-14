@@ -1,16 +1,60 @@
-# Description
+# TagiDashboardTaskSorting
 
-This is a small plugin for [Kanboard](https://kanboard.org/), a free and open source Kanban project management system. It changes the sorting of the _tasks_ on the _dashboard_ overview and tasks site.
+#### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
-# How to install
+This plugin changes the sorting of the _tasks_ on the _dashboard_ overview and tasks site.
 
-Create a new folder inside your Kanboard installation under _plugins_ like: `plugins/TagiDashboardTaskSorting` and move the content of this repo directly there.
 
-# Why
+Compatibility
+-------------
 
-I like the tasks to be sorted by default by _due date_ so that most important tasks will show up on the top by default.
+- Requires [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software") ≥`1.2.26`
 
-# Todo
+#### Other Plugins & Action Plugins
+- _No known issues_
+#### Core Files & Templates
+- _No database changes_
 
-- let tasks without a due date appear on bottom in the projects tasks list as well
-- maybe add some configuration stuff later?
+
+Changelog
+---------
+
+Read the full [**Changelog**](../master/changelog.md "See changes")
+ 
+
+Installation
+------------
+
+- **Install via the [Releases](../master/Releases/ "A copy of each release is saved in the folder") folder**
+  - A copy of each release is saved in the `/Releases` folder of the repository
+  - Simply extract the `.zip` file into the `/plugins` directory
+
+**_or_**
+
+- **Install via [GitHub](https://github.com/ "Find the correct plugin from the list of repositories")**
+  - Download the `.zip` file and decompress everything under the directory `/plugins`
+  - The folder inside the `.zip` must not contain any branch names and must be exact case (matching the plugin name)
+
+_Note: The `/plugins` folder is case-sensitive._
+
+**_or_**
+
+- **Install using Git CLI**
+  - `git clone` (_or ftp upload_) and extract the `.zip` file into this folder: `.\plugins\` (must be exact case)
+
+
+Translations
+------------
+
+- _Contributors welcome_
+
+Authors & Contributors
+----------------------
+
+- [@Tagirijus](https://github.com/Tagirijus) - Author
+- _Contributors welcome_
+
+
+License
+-------
+- This project is distributed under the [MIT License](../master/LICENSE "Read The MIT license")
