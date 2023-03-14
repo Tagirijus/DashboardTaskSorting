@@ -4,6 +4,11 @@
 
 This plugin changes the **default** sorting of the _tasks_ on the _dashboard_ overview and _my tasks_ site.
 
+The sorting logic is now:
+
+1. Sort by due date ASC, while keeping tasks without any due date at the bottom.
+2. Then sort by priority DESC.
+
 
 Screenshots
 -------------
