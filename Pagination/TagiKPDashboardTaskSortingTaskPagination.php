@@ -1,7 +1,7 @@
 <?php
 
 // namespace Kanboard\Pagination;
-namespace Kanboard\Plugin\TagiDashboardTaskSorting\Pagination;
+namespace Kanboard\Plugin\TagiKPDashboardTaskSorting\Pagination;
 
 use Kanboard\Core\Base;
 use Kanboard\Core\Paginator;
@@ -13,7 +13,7 @@ use Kanboard\Model\TaskModel;
  * @package Kanboard\Pagination
  * @author  Frederic Guillot
  */
-class TagiDashboardTaskSortingTaskPagination extends Base
+class TagiKPDashboardTaskSortingTaskPagination extends Base
 {
     /**
      * Get dashboard pagination

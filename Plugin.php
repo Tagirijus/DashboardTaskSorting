@@ -1,9 +1,9 @@
 <?php
 
-namespace Kanboard\Plugin\TagiDashboardTaskSorting;
+namespace Kanboard\Plugin\TagiKPDashboardTaskSorting;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Plugin\TagiDashboardTaskSorting\Pagination;
+use Kanboard\Plugin\TagiKPDashboardTaskSorting\Pagination;
 
 
 class Plugin extends Base
@@ -11,16 +11,16 @@ class Plugin extends Base
     public function initialize()
     {
         $this->container['dashboardPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiDashboardTaskSortingPagination($container);
+            return new Pagination\TagiKPDashboardTaskSortingPagination($container);
         });
         $this->container['taskPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiDashboardTaskSortingTaskPagination($container);
+            return new Pagination\TagiKPDashboardTaskSortingTaskPagination($container);
         });
     }
 
     public function getPluginName()
     {
-        return 'TagiDashboardTaskSorting';
+        return 'TagiKPDashboardTaskSorting';
     }
 
     public function getPluginDescription()
@@ -35,12 +35,12 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.2.0';
+        return '1.3.0';
     }
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/tagirijus/kanboard-TagiDashboardTaskSorting';
+        return 'https://github.com/tagirijus/TagiKPDashboardTaskSorting';
     }
 
     public function getCompatibleVersion()

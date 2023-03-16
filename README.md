@@ -1,4 +1,4 @@
-# TagiDashboardTaskSorting
+# TagiKPDashboardTaskSorting
 
 #### _Plugin for [Kanboard](https://github.com/fguillot/kanboard "Kanboard - Kanban Project Management Software")_
 
@@ -39,8 +39,7 @@ Installation
 ------------
 
 1. Go into Kanboards `plugin/` folder
-2. `git clone https://github.com/Tagirijus/kanbaord-TagiDashboardTaskSorting`
-3. Maybe rename the new created folder to `TagiDashboardTaskSorting`
+2. `git clone https://github.com/Tagirijus/TagiKPDashboardTaskSorting`
 
 
 Authors & Contributors

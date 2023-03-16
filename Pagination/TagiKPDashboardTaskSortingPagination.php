@@ -1,20 +1,20 @@
 <?php
 
 // namespace Kanboard\Pagination;
-namespace Kanboard\Plugin\TagiDashboardTaskSorting\Pagination;
+namespace Kanboard\Plugin\TagiKPDashboardTaskSorting\Pagination;
 
 use Kanboard\Core\Base;
 use Kanboard\Model\ProjectModel;
 use Kanboard\Model\TaskModel;
 
 /**
- * Class TagiDashboardPaginationTaskSorting for changing just the default task sorting.
+ * Class TagiKPDashboardPaginationTaskSorting for changing just the default task sorting.
  *
  * @package Kanboard\Pagination
  * @author  Frederic Guillot
  * @author  Manuel Senfft
  */
-class TagiDashboardTaskSortingPagination extends Base
+class TagiKPDashboardTaskSortingPagination extends Base
 {
     /**
      * Get user listing pagination
