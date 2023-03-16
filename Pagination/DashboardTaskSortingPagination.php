@@ -1,35 +1,39 @@
 <?php
 
 // namespace Kanboard\Pagination;
-namespace Kanboard\Plugin\TagiKPDashboardTaskSorting\Pagination;
+namespace Kanboard\Plugin\DashboardTaskSorting\Pagination;
 
 use Kanboard\Core\Base;
-use Kanboard\Core\Paginator;
+use Kanboard\Model\ProjectModel;
 use Kanboard\Model\TaskModel;
 
 /**
- * Class TaskPagination
+ * Class DashboardPaginationTaskSorting for changing just the default task sorting.
  *
  * @package Kanboard\Pagination
  * @author  Frederic Guillot
+ * @author  Manuel Senfft
  */
-class TagiKPDashboardTaskSortingTaskPagination extends Base
+class DashboardTaskSortingPagination extends Base
 {
     /**
-     * Get dashboard pagination
+     * Get user listing pagination
      *
      * @access public
      * @param  integer $userId
-     * @param  string  $method
-     * @param  integer $max
-     * @return Paginator
+     * @return array
      */
-    public function getDashboardPaginator($userId, $method, $max)
+    public function getOverview($userId)
     {
-        $query = $this->taskFinderModel->getUserQuery($userId);
-        $this->hook->reference('pagination:dashboard:task:query', $query);
+        $paginators = array();
+        $projects = $this->projectUserRoleModel->getActiveProjectsByUser($userId);
 
-        // if a GET option for "order" is given, use the native logic,
+        foreach ($projects as $projectId => $projectName) {
+
+            $query = $this->taskFinderModel->getUserQuery($userId)->eq(ProjectModel::TABLE.'.id', $projectId);
+            $this->hook->reference('pagination:dashboard:task:query', $query);
+
+            // if a GET option for "order" is given, use the native logic,
         // otherwise use my new logic, which also puts the task to the
         // bottom of the list, if their due-date is 0
         //
@@ -62,12 +66,23 @@ class TagiKPDashboardTaskSortingTaskPagination extends Base
             $query->orderBy(TaskModel::TABLE . '.position', 'ASC');
         }
 
-        return $this->paginator
-            ->setUrl('DashboardController', $method, array('pagination' => 'tasks', 'user_id' => $userId))
-            ->setMax($max)
-            ->setOrder(TaskModel::TABLE.'.date_due')
-            ->setQuery($query)
-            ->setFormatter($this->taskListFormatter)
-            ->calculateOnlyIf($this->request->getStringParam('pagination') === 'tasks');
+            $paginator = $this->paginator
+                ->setUrl('DashboardController', 'show', array('user_id' => $userId, 'pagination' => 'tasks-'.$projectId), 'project-tasks-'.$projectId)
+                ->setMax(15)
+                ->setOrder(TaskModel::TABLE.'.date_due')
+                ->setFormatter($this->taskListSubtaskAssigneeFormatter->withUserId($userId))
+                ->setQuery($query)
+                ->calculateOnlyIf($this->request->getStringParam('pagination') === 'tasks-'.$projectId);
+
+            if ($paginator->getTotal() > 0) {
+                $paginators[] = array(
+                    'project_id'   => $projectId,
+                    'project_name' => $projectName,
+                    'paginator'    => $paginator,
+                );
+            }
+        }
+
+        return $paginators;
     }
 }

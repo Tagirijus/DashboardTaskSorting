@@ -1,9 +1,9 @@
 <?php
 
-namespace Kanboard\Plugin\TagiKPDashboardTaskSorting;
+namespace Kanboard\Plugin\DashboardTaskSorting;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Plugin\TagiKPDashboardTaskSorting\Pagination;
+use Kanboard\Plugin\DashboardTaskSorting\Pagination;
 
 
 class Plugin extends Base
@@ -11,21 +11,21 @@ class Plugin extends Base
     public function initialize()
     {
         $this->container['dashboardPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiKPDashboardTaskSortingPagination($container);
+            return new Pagination\DashboardTaskSortingPagination($container);
         });
         $this->container['taskPagination'] = $this->container->factory(function ($container) {
-            return new Pagination\TagiKPDashboardTaskSortingTaskPagination($container);
+            return new Pagination\DashboardTaskSortingTaskPagination($container);
         });
     }
 
     public function getPluginName()
     {
-        return 'TagiKPDashboardTaskSorting';
+        return 'DashboardTaskSorting';
     }
 
     public function getPluginDescription()
     {
-        return t('Tagi Dashboard Task Sorting changes the default sorting for tasks on the main dashboard to 1. due date ASC and 2. priority DESC: for both, the overview and the tasks site.');
+        return t('DashboardTaskSorting changes the default sorting for tasks on the main dashboard to 1. due date ASC and 2. priority DESC: for both, the overview and the tasks site.');
     }
 
     public function getPluginAuthor()
@@ -35,12 +35,12 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.3.0';
+        return '1.4.0';
     }
 
     public function getPluginHomepage()
     {
-        return 'https://github.com/tagirijus/TagiKPDashboardTaskSorting';
+        return 'https://github.com/tagirijus/DashboardTaskSorting';
     }
 
     public function getCompatibleVersion()
