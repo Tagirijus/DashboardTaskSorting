@@ -38,7 +38,7 @@ Read the full [**Changelog**](../master/changelog.md "See changes")
 Installation
 ------------
 
-1. Go into Kanboards `plugin/` folder
+1. Go into Kanboards `plugins/` folder
 2. `git clone https://github.com/Tagirijus/TagiKPDashboardTaskSorting`
 
 
