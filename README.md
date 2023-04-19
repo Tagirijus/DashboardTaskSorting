@@ -9,6 +9,8 @@ The sorting logic is now:
 1. Sort by due date ASC, while keeping tasks without any due date at the bottom.
 2. Then sort by priority DESC.
 
+Also _(since version 1.5.0)_ there is the option to group task by their columnnames on the "My tasks" view.
+
 
 Screenshots
 -------------
@@ -26,6 +28,7 @@ Compatibility
 #### Other Plugins & Action Plugins
 - _No known issues_
 #### Core Files & Templates
+- `01` template overrides
 - _No database changes_
 
 
