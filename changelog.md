@@ -1,6 +1,15 @@
 # Changelog
 
 
+## v1.5
+
+### What's Changed
+
+_(most recent changes are listed on top):_
+- Added grouping feature for the _"My tasks"_ site on the dashboard
+- Added build releases
+
+
 ## v1.4
 
 ### What's Changed
